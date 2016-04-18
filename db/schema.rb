@@ -11,16 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405055538) do
-
-  create_table "addresses", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "home_phone"
-  end
+ActiveRecord::Schema.define(version: 20160418034009) do
 
   create_table "facebookusers", force: :cascade do |t|
     t.string   "provider"
@@ -30,6 +21,16 @@ ActiveRecord::Schema.define(version: 20160405055538) do
     t.datetime "oauth_expires_at"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string   "title"
+    t.string   "platform"
+    t.string   "picture"
+    t.string   "description"
+    t.integer  "lobbies"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
